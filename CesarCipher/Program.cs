@@ -2,6 +2,8 @@
 {
     public class Program
     {
+        public static CesarEnryption Singleton = new CesarEnryption();
+
         static void Main(string[] args)
         {
             while (true)
@@ -19,11 +21,11 @@
 
                 if (key.Key == ConsoleKey.D1)
                 {
-                    result = CesarEnryption.Perform(sentence, true);
+                    result = Singleton.Perform(sentence, true);
                 }
                 else if (key.Key == ConsoleKey.D2)
                 {
-                    result = CesarEnryption.Perform(sentence, false);
+                    result = Singleton.Perform(sentence, false);
                 }
                 Console.WriteLine("Oryginalne zdanie: " + sentence);
                 Console.WriteLine("Zdanie po konwersji: " + result);
@@ -33,14 +35,14 @@
 
     }
 
-    public static class CesarEnryption
+    public class CesarEnryption
     {
         public static readonly char[] Alphabet = new char[]
         {
             'A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż'
         };
 
-        public static string Perform(string? sentence, bool encrypt)
+        public string Perform(string? sentence, bool encrypt)
         {
             char[] sentenceChars = sentence.ToUpper().ToCharArray();
             char[] encryptionResult = new char[sentenceChars.Length];
