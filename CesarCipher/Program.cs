@@ -19,56 +19,44 @@
                 var key = Console.ReadKey();
 
                 Console.WriteLine("Wpisz zdanie do konwersji:");
-                string? sentence = Console.ReadLine();
-                sentence = sentence.ToUpper();
+                string? sentence = Console.ReadLine().ToUpper();
 
+                char[] sentenceChars = sentence.ToCharArray();
+                char[] encryptionResult = new char[sentenceChars.Length];
                 if (key.Key == ConsoleKey.D1)
                 {
-                    char[] sentenceChars = sentence.ToCharArray();
-                    char[] encryptedResult = new char[sentenceChars.Length];
-
                     for (int i = 0; i < sentenceChars.Length; i++)
                     {
                         char letter = sentenceChars[i];
                         if (letter == ' ' || letter == '\n')
                         {
-                            encryptedResult[i] = ' ';
+                            encryptionResult[i] = ' ';
                             continue;
                         }
 
-                        int pozycja = Array.IndexOf(Alphabet, letter);
-                        int nowaPozycja = (pozycja + 3) % Alphabet.Length;
-                        char zaszyfrowanaLitera = Alphabet[nowaPozycja];
-                        encryptedResult[i] = zaszyfrowanaLitera;
-
+                        int oldPosition = Array.IndexOf(Alphabet, letter);
+                        int newPosition = (oldPosition + 3) % Alphabet.Length;
+                        encryptionResult[i] = Alphabet[newPosition];
                     }
-
-                    Console.WriteLine("Oryginalne zdanie: " + sentence);
-                    Console.WriteLine("Zaszyfrowane zdanie: " + string.Join("", encryptedResult));
                 }
                 else if (key.Key == ConsoleKey.D2)
                 {
-                    char[] sentenceChars = sentence.ToCharArray();
-                    char[] decryptedResult = new char[sentenceChars.Length];
-
                     for (int i = 0; i < sentenceChars.Length; i++)
                     {
                         char letter = sentenceChars[i];
                         if (letter == ' ' || letter == '\n')
                         {
-                            decryptedResult[i] = ' ';
+                            encryptionResult[i] = ' ';
                             continue;
                         }
 
-                        int pozycja = Array.IndexOf(Alphabet, letter);
-                        int nowaPozycja = (pozycja - 3) % Alphabet.Length;
-                        char zaszyfrowanaLitera = Alphabet[nowaPozycja];
-                        decryptedResult[i] = zaszyfrowanaLitera;
+                        int oldPosition = Array.IndexOf(Alphabet, letter);
+                        int newPosition = (oldPosition - 3) % Alphabet.Length;
+                        encryptionResult[i] = Alphabet[newPosition];
                     }
-
-                    Console.WriteLine("Oryginalne zdanie: " + sentence);
-                    Console.WriteLine("Odszyfrowane zdanie: " + string.Join("", decryptedResult));
                 }
+                Console.WriteLine("Oryginalne zdanie: " + sentence);
+                Console.WriteLine("Zdanie po konwersji: " + string.Join("", encryptionResult));
                 Console.ReadKey();
             }
         }
