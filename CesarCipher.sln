@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CesarCipher", "CesarCipher.csproj", "{CFCD8A50-475B-4EE0-8FDB-3011C3E247FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CesarCipherTests", "..\CesarCipherTests\CesarCipherTests.csproj", "{A0DB1EC2-9117-49B9-98F1-32C5815006E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CFCD8A50-475B-4EE0-8FDB-3011C3E247FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCD8A50-475B-4EE0-8FDB-3011C3E247FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCD8A50-475B-4EE0-8FDB-3011C3E247FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DB1EC2-9117-49B9-98F1-32C5815006E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DB1EC2-9117-49B9-98F1-32C5815006E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DB1EC2-9117-49B9-98F1-32C5815006E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DB1EC2-9117-49B9-98F1-32C5815006E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
